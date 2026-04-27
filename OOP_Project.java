@@ -32,12 +32,13 @@ public class OOP_Project {
             System.out.println("1. View All Rooms");
             System.out.println("2. Check-in (Specific Room)");
             System.out.println("3. Check-in (Any Available Room)");
-            System.out.println("4. Update Room Status (Cleaning/Supplies)");
-            System.out.println("5. Exit");
+            System.out.println("4. Check-out");
+            System.out.println("5. Update Room Status (Cleaning/Supplies)");
+            System.out.println("6. Exit");
             System.out.print("Select an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -56,9 +57,14 @@ public class OOP_Project {
                     hotelService.processCheckInRandomRoom(randomName);
                     break;
                 case 4:
+                    System.out.print("Enter room number to check out: ");
+                    int checkoutNum = scanner.nextInt();
+                    hotelService.processCheckout(checkoutNum);
+                    break;
+                case 5:
                     System.out.print("Enter room number to update: ");
                     int updateNum = scanner.nextInt();
-                    scanner.nextLine(); // Consume the newline
+                    scanner.nextLine();
 
                     System.out.print("Is the room clean? (y/n): ");
                     boolean isClean = scanner.nextLine().equalsIgnoreCase("y");
@@ -68,7 +74,7 @@ public class OOP_Project {
 
                     hotelService.updateRoomStatus(updateNum, isClean, isStocked);
                     break;
-                case 5:
+                case 6:
                     running = false;
                     System.out.println("Shutting down terminal...");
                     break;

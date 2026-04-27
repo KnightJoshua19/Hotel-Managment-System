@@ -98,4 +98,24 @@ public class CheckInSystem {
         targetRoom.isAvailable = false;
         return true;
     }
+
+    public void processCheckout(int roomNumber) {
+        for (Room room : rooms) {
+            if (room.roomNumber == roomNumber) {
+                if (room.isAvailable) {
+                    System.out.println("Error: Room " + roomNumber + " is already empty!");
+                    return;
+                }
+
+                room.isAvailable = true; // free up the room
+                room.isClean = false; // mark as dirty
+                room.suppliesStocked = false; // needs new supplies
+
+                System.out.println("Success: Guest checked out of Room " + roomNumber + ".");
+                System.out.println(" > Room is now marked as dirty and needs restocking.");
+                return;
+            }
+        }
+        System.out.println("Error: Room " + roomNumber + " does not exist.");
+    }
 }
