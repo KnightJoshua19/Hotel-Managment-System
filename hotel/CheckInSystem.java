@@ -24,6 +24,18 @@ public class CheckInSystem {
         }
     }
 
+    public String getRoomStatusText() {
+        StringBuilder sb = new StringBuilder();
+        for (Room r : rooms) {
+            String status = r.isAvailable ? "Available" : "Occupied";
+            String cleanStatus = r.isClean ? "Clean" : "Dirty";
+            sb.append("Room ").append(r.roomNumber)
+                    .append(" | ").append(status)
+                    .append(" | ").append(cleanStatus).append("\n");
+        }
+        return sb.toString();
+    }
+
     public void updateRoomStatus(int roomNumber, boolean isClean, boolean isStocked) {
         for (Room room : rooms) {
             if (room.roomNumber == roomNumber) {
