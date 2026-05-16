@@ -1,96 +1,198 @@
-/* assets/style.css */
+/* src/main/resources/assets/style.css */
 
-.root {
-  -fx-background-color: #f2efeb;
-}
-
-.title-label {
+/* --- PAGE 1: CINEMATIC LANDING --- */
+.landing-title {
   -fx-font-family: "Georgia";
-  -fx-font-size: 46px;
-  -fx-font-style: italic;
-  -fx-text-fill: #424732;
-  -fx-effect: dropshadow(
-    three-pass-box,
-    rgba(0, 0, 0, 0.2),
-    10,
-    0,
-    0,
-    5
-  ); /* Soft drop shadow */
+  -fx-font-size: 64px;
+  -fx-text-fill: #d4af37; /* Majestic Gold */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.9), 15, 0, 0, 5);
 }
 
-.header-label {
-  -fx-font-family: "sans-serif";
-  -fx-font-size: 26px;
+.landing-subtitle {
+  -fx-font-family: "SansSerif";
+  -fx-font-size: 16px;
+  -fx-text-fill: #a0a0a0; /* Light silver */
   -fx-font-weight: bold;
-  -fx-text-fill: #424732;
-  -fx-border-width: 0 0 2 0; /* Elegant underline */
-  -fx-border-color: #819590;
-  -fx-padding: 0 0 5 0;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 5, 0, 0, 2);
 }
 
-.dashboard-button {
-  -fx-background-color: #424732;
-  -fx-text-fill: #f2efeb;
-  -fx-background-radius: 8px;
-  -fx-font-size: 14px;
-  -fx-font-weight: bold;
-  -fx-padding: 12 25 12 25;
-  -fx-cursor: hand;
-  -fx-effect: dropshadow(
-    three-pass-box,
-    rgba(0, 0, 0, 0.3),
-    5,
-    0,
-    0,
-    2
-  ); /* Floating button effect */
-}
-
-.dashboard-button:hover {
-  -fx-background-color: #819590;
-  -fx-translate-y: -2px; /* Moves the button up slightly when you hover over it! */
-}
-
-.display-area {
-  -fx-control-inner-background: #bbaa96;
-  -fx-text-fill: #1a1c14; /* Darker text for readability */
-  -fx-font-family: "monospace";
-  -fx-font-weight: bold;
-  -fx-font-size: 15px;
-  -fx-background-radius: 8px;
-  -fx-border-radius: 8px;
-  -fx-border-color: #424732;
+.ghost-button {
+  -fx-background-color: rgba(0, 0, 0, 0.4);
+  -fx-border-color: #d4af37; /* Gold border */
   -fx-border-width: 2px;
-  -fx-padding: 10px;
-  -fx-effect: innershadow(
+  -fx-border-radius: 30px; /* Fully pill-shaped */
+  -fx-background-radius: 30px;
+  -fx-text-fill: #d4af37;
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+  -fx-font-family: "SansSerif";
+  -fx-padding: 12px 40px;
+  -fx-cursor: hand;
+}
+
+.ghost-button:hover {
+  -fx-background-color: #d4af37; /* Fills with gold on hover */
+  -fx-text-fill: #121212; /* Dark text */
+  -fx-effect: dropshadow(
     three-pass-box,
-    rgba(0, 0, 0, 0.4),
+    rgba(212, 175, 55, 0.4),
     15,
     0,
     0,
     0
-  ); /* Cool inner shadow */
+  ); /* Gold glow */
 }
 
-.form-label {
-  -fx-font-family: "sans-serif";
+.root {
+  /* This applies the background image to the entire app */
+  -fx-background-image: url("room_bg.jpg");
+  -fx-background-size: cover;
+  -fx-background-position: center center;
+}
+
+/* --- TYPOGRAPHY --- */
+.gold-title {
+  -fx-font-family: "Georgia";
+  -fx-font-size: 58px;
+  -fx-text-fill: #d4af37; /* Elegant Gold */
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 5);
+}
+
+.gold-subtitle {
+  -fx-font-family: "SansSerif";
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #d4af37;
+  -fx-letter-spacing: 2px;
+}
+
+.header-label {
+  -fx-font-family: "SansSerif";
+  -fx-font-size: 24px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffffff;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  -fx-background-color: #121212; /* Solid dark grey/black */
+}
+
+.sidebar-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: #a0a0a0;
   -fx-font-size: 15px;
   -fx-font-weight: bold;
-  -fx-text-fill: #424732;
+  -fx-alignment: center-left;
+  -fx-padding: 15 20 15 30;
+  -fx-cursor: hand;
+}
+
+.sidebar-button:hover {
+  -fx-text-fill: #d4af37; /* Turns gold on hover */
+  -fx-background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* --- GLASS PANELS (The Right-Side Cards & Bottom Bar) --- */
+.glass-panel {
+  -fx-background-color: rgba(30, 30, 30, 0.75); /* 75% opaque dark grey */
+  -fx-background-radius: 15px;
+  -fx-padding: 20px;
+  -fx-cursor: hand;
+  -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.5), 10, 0, 0, 5);
+}
+
+.glass-panel:hover {
+  -fx-background-color: rgba(50, 50, 50, 0.85);
+  -fx-translate-y: -2px; /* Slight lift effect */
+}
+
+.glass-title {
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #ffffff;
+}
+
+.glass-text {
+  -fx-font-size: 12px;
+  -fx-text-fill: #a0a0a0;
+}
+
+/* --- THE DISPLAY AREA (Made Translucent) --- */
+.display-area {
+  /* Makes the text box look like glass too! */
+  -fx-control-inner-background: rgba(20, 20, 20, 0.6);
+  -fx-background-color: transparent;
+  -fx-text-fill: #e0e0e0;
+  -fx-font-family: "monospace";
+  -fx-font-weight: bold;
+  -fx-font-size: 14px;
+  -fx-padding: 10px;
+}
+.display-area .content {
+  -fx-background-color: transparent;
+}
+
+/* --- FORM ELEMENTS (Glassmorphism Dark Theme) --- */
+.form-label {
+  -fx-font-family: "SansSerif";
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #d4af37; /* Gold text for input labels */
 }
 
 .text-field {
-  -fx-background-color: #ffffff;
-  -fx-background-radius: 5px;
-  -fx-border-color: #819590;
+  -fx-background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Semi-transparent black input boxes */
+  -fx-text-fill: #ffffff;
+  -fx-border-color: rgba(212, 175, 55, 0.5); /* Faded gold border */
   -fx-border-radius: 5px;
+  -fx-background-radius: 5px;
   -fx-padding: 10px;
   -fx-font-size: 14px;
 }
 
+.text-field:focused {
+  -fx-border-color: #d4af37; /* Bright gold when clicked */
+}
+
 .check-box {
   -fx-font-size: 15px;
-  -fx-text-fill: #424732;
+  -fx-text-fill: #e0e0e0; /* Light grey text */
   -fx-font-weight: bold;
+}
+
+/* --- FORM BUTTONS --- */
+.action-button {
+  -fx-background-color: #d4af37;
+  -fx-text-fill: #121212;
+  -fx-font-weight: bold;
+  -fx-font-size: 14px;
+  -fx-background-radius: 5px;
+  -fx-padding: 10px 25px;
+  -fx-cursor: hand;
+}
+
+.action-button:hover {
+  -fx-background-color: #f3e5ab; /* Lighter gold on hover */
+  -fx-translate-y: -2px;
+}
+
+.cancel-button {
+  -fx-background-color: transparent;
+  -fx-text-fill: #a0a0a0;
+  -fx-border-color: #a0a0a0;
+  -fx-border-radius: 5px;
+  -fx-font-size: 14px;
+  -fx-padding: 10px 25px;
+  -fx-cursor: hand;
+}
+
+.cancel-button:hover {
+  -fx-text-fill: #ffffff;
+  -fx-border-color: #ffffff;
 }

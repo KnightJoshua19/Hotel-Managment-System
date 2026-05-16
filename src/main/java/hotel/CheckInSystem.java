@@ -94,4 +94,9 @@ public class CheckInSystem {
         targetRoom.isAvailable = false;
         return true;
     }
+
+    // Add this right below your constructor
+    public ArrayList<Room> getAllRooms() {
+        return rooms;
+    }
 }
