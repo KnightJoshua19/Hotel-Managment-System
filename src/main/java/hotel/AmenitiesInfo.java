@@ -1,9 +1,9 @@
 package hotel;
 
 public class AmenitiesInfo {
-    public boolean poolAccess = true;
-    public boolean gymAccess = true;
-    public boolean restaurantAccess = true;
+    private boolean poolAccess = true;
+    private boolean gymAccess = true;
+    private boolean restaurantAccess = true;
 
     public String getStatus() {
         String pool = poolAccess ? "Yes" : "No";
@@ -16,5 +16,17 @@ public class AmenitiesInfo {
         this.poolAccess = pool;
         this.gymAccess = gym;
         this.restaurantAccess = rest;
+    }
+
+    public boolean getPoolAccessStatus() {
+        return poolAccess;
+    }
+
+    public boolean getGymAccessStatus() {
+        return gymAccess;
+    }
+
+    public boolean getRestaurantAccessStatus() {
+        return restaurantAccess;
     }
 }

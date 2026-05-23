@@ -7,8 +7,7 @@ public class StandardRoom extends Room {
 
     @Override
     protected void setupAmenities() {
-        getAmenities().poolAccess = false;
-        getAmenities().gymAccess = false;
-        getAmenities().restaurantAccess = false;
+
+        getAmenities().updateAmenities(false, false, false);
     }
 }

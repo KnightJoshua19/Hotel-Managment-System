@@ -292,9 +292,9 @@ public class HotelGUI extends Application {
 
         VBox amenityRows = new VBox(6);
         amenityRows.getChildren().addAll(
-                makeAmenityRow("Pool Access", r.getAmenities().poolAccess),
-                makeAmenityRow("Gym Access", r.getAmenities().gymAccess),
-                makeAmenityRow("Restaurant Access", r.getAmenities().restaurantAccess));
+                makeAmenityRow("Pool Access", r.getAmenities().getPoolAccessStatus()),
+                makeAmenityRow("Gym Access", r.getAmenities().getGymAccessStatus()),
+                makeAmenityRow("Restaurant Access", r.getAmenities().getRestaurantAccessStatus()));
 
         detailPanel.getChildren().addAll(amenitiesHeader, amenityRows);
 

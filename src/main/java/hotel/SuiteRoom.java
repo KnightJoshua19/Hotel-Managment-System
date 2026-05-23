@@ -7,8 +7,7 @@ public class SuiteRoom extends Room {
 
     @Override
     protected void setupAmenities() {
-        getAmenities().poolAccess = true;
-        getAmenities().gymAccess = true;
-        getAmenities().restaurantAccess = true;
+
+        getAmenities().updateAmenities(true, true, true);
     }
 }
